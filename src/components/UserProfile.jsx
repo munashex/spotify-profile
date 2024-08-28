@@ -58,7 +58,7 @@ console.log(artists)
 
 
   return (
-    <div className="bg-[#181818] w-full h-full"> 
+    <div className="bg-[#181818] w-full h-[100%]"> 
 
     <div className="mx-2 lg:mx-36 pt-12 overflow-x-auto"> 
       {/* profile bio type thing here */}
@@ -85,11 +85,12 @@ console.log(artists)
       </button>
     </div>
     {/* Add your content for top artists here */}
-    <div className="">
+    <div className="flex flex-col gap-y-7">
      {artists?.map((artist) => (
-     <div key={artist.name}> 
-       <img src={artists?.images}/>
-       <h1 className="text-white text-lg">{artist?.name}</h1> 
+     <div key={artist.name} className="flex items-center gap-4"> 
+       <img src={artist.images[2]?.url} alt={artist?.name} 
+       className="rounded-full w-16 h-16 hover:rounded-none"/>
+       <h1 className="text-white text-lg hover:underline cursor-pointer">{artist?.name}</h1> 
      </div> 
      ))}
     </div>
