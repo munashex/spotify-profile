@@ -8,7 +8,8 @@ import Artist from './Pages/Artist';
 import Artists from './Pages/Artists'; 
 import Track from './Pages/Track'; 
 import Tracks from './Pages/Tracks'; 
-import Recent from './Pages/Recent';
+import Recent from './Pages/Recent'; 
+import NotFound from './Pages/NotFound';
 
 function App() { 
   return (
@@ -23,6 +24,7 @@ function App() {
         <Route path="/artists" element={<Artists/>}/> 
         <Route path="/tracks" element={<Tracks/>}/> 
         <Route path="/recent" element={<Recent/>}/>
+        <Route path="*" element={<NotFound/>}/>
       </Routes>
     </Router>
   );

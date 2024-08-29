@@ -2,11 +2,11 @@ import { FaUser } from "react-icons/fa";
 import { TbMicrophone2 } from "react-icons/tb";
 import { FaMusic } from "react-icons/fa"; 
 import { GiAnticlockwiseRotation } from "react-icons/gi";
-import { BiSolidPlaylist } from "react-icons/bi";  
 import {useLocation} from 'react-router-dom' 
 import { FaSpotify } from "react-icons/fa"; 
 import { Link } from "react-router-dom";
 import { FaGithub } from "react-icons/fa";
+import { Link as Li} from "react-router-dom";
 
 
 const navLinks = [ 
@@ -18,22 +18,17 @@ const navLinks = [
     {
     name: "Top Artists", 
     icon: <TbMicrophone2 size={17}/>, 
-    link: "artists"
+    link: "/artists"
     }, 
     {
     name: "Top Tracks", 
     icon: <FaMusic size={17}/>, 
-    link: "tracks"
+    link: "/tracks"
     }, 
     {
     name: "Recent", 
     icon: <GiAnticlockwiseRotation size={17}/>, 
-    link: "recent"
-    },
-    {
-    name: "Playlists",
-    icon: <BiSolidPlaylist size={17}/>,
-    link: "playlist"
+    link: "/recent"
     }
 ]
 
@@ -50,7 +45,7 @@ const location = useLocation()
   <div className="fixed bottom-0 left-0 right-0 bg-[#040306]">
     <div className="flex justify-between items-center w-full max-w-screen-sm mx-auto py-2 px-4 border-t border-gray-800">
       {navLinks.map((item) => (
-        <div
+        <Li to={item.link}
           key={item.link}
           className={`flex flex-col items-center justify-center py-2 ${
             location.pathname === item.link
@@ -60,7 +55,7 @@ const location = useLocation()
         >
           <span>{item.icon}</span>
           <h1 className="text-xs mt-1">{item.name}</h1>
-        </div>
+        </Li>
       ))}
     </div>
   </div>
@@ -70,13 +65,14 @@ const location = useLocation()
     {/* side navbar on lg screens */} 
     <div className="fixed top-0 bottom-0 left-0">
   <div className="hidden lg:flex justify-between items-center flex-col bg-[#040306] h-screen py-9 w-32"> {/* Added fixed width */}
-    <Link href="/profile">
+    <Link to="/profile">
       <FaSpotify size={54} color="#3BE477" />
     </Link>
 
     <div className="flex flex-col w-full">
       {navLinks.map((item) => (
-        <div
+        <Li 
+         to={item.link}
           key={item.link}
           className={`${
             location.pathname === item.link
@@ -86,7 +82,7 @@ const location = useLocation()
         >
           <span>{item.icon}</span>
           <h1 className="text-sm">{item.name}</h1>
-        </div>
+        </Li>
       ))}
     </div>
 
