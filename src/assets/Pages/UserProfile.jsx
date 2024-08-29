@@ -70,44 +70,57 @@ const UserProfile = () => {
         </header>
 
         <div className="grid md:grid-cols-2 gap-16">
-          <Section title="Top Artists" data={artists} renderItem={(artist) => (
-            <Link to={`/artist/${artist.id}`} key={artist.id} className="flex items-center space-x-4 group">
-              <img 
-                src={artist.images[2]?.url} 
-                alt={artist.name} 
-                className="w-16 h-16 rounded-full group-hover:rounded-lg transition-all duration-300 ease-in-out shadow-md"
-              />
-              <h3 className="text-lg font-semibold group-hover:underline transition-all duration-300 ease-in-out">{artist.name}</h3>
-            </Link>
-          )} />
+          <Section 
+            title="Top Artists" 
+            data={artists} 
+            renderItem={(artist) => (
+              <Link to={`/artist/${artist.id}`} key={artist.id} className="flex items-center space-x-4 group">
+                <img 
+                  src={artist.images[2]?.url} 
+                  alt={artist.name} 
+                  className="w-16 h-16 rounded-full group-hover:rounded-lg transition-all duration-300 ease-in-out shadow-md"
+                />
+                <h3 className="text-lg font-semibold group-hover:underline transition-all duration-300 ease-in-out">{artist.name}</h3>
+              </Link>
+            )}
+            onSeeMore={() => navigate('/artists')}
+          />
 
-          <Section title="Top Tracks" data={tracks} renderItem={(track) => (
-            <Link to={`/track/${track.id}`} key={track.id} className="flex items-center space-x-4 group">
-              <img 
-                src={track.album?.images[2]?.url} 
-                alt={track.name} 
-                className="w-16 h-16 rounded-lg group-hover:rounded-full transition-all duration-300 ease-in-out shadow-md"
-              />
-              <div className="flex-grow">
-                <h3 className="text-lg font-semibold group-hover:underline transition-all duration-300 ease-in-out">{track.name}</h3>
-                <p className="text-[#8e8c8c] text-sm">{track.artists.map(a => a.name).join(', ')}</p>
-              </div>
-              <div className="text-[#8e8c8c] text-sm">
-                {formatDuration(track.duration_ms)}
-              </div>
-            </Link>
-          )} />
+          <Section 
+            title="Top Tracks" 
+            data={tracks} 
+            renderItem={(track) => (
+              <Link to={`/track/${track.id}`} key={track.id} className="flex items-center space-x-4 group">
+                <img 
+                  src={track.album?.images[2]?.url} 
+                  alt={track.name} 
+                  className="w-16 h-16 rounded-lg group-hover:rounded-full transition-all duration-300 ease-in-out shadow-md"
+                />
+                <div className="flex-grow">
+                  <h3 className="text-lg font-semibold group-hover:underline transition-all duration-300 ease-in-out">{track.name}</h3>
+                  <p className="text-[#8e8c8c] text-sm">{track.artists.map(a => a.name).join(', ')}</p>
+                </div>
+                <div className="text-[#8e8c8c] text-sm">
+                  {formatDuration(track.duration_ms)}
+                </div>
+              </Link>
+            )}
+            onSeeMore={() => navigate('/tracks')}
+          />
         </div>
       </div>
     </div>
   );
 };
 
-const Section = ({ title, data, renderItem }) => (
+const Section = ({ title, data, renderItem, onSeeMore }) => (
   <section className="space-y-8">
     <div className="flex justify-between items-center">
       <h2 className="text-2xl font-bold">{title}</h2>
-      <button className="border border-white hover:bg-white hover:text-black text-white py-2 px-5 rounded-full transition duration-300 ease-in-out transform hover:scale-105">
+      <button 
+        onClick={onSeeMore}
+        className="border border-white hover:bg-white hover:text-black text-white py-2 px-5 rounded-full transition duration-300 ease-in-out transform hover:scale-105"
+      >
         SEE MORE
       </button>
     </div>

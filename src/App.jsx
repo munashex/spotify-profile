@@ -5,7 +5,8 @@ import UserProfile from './assets/Pages/UserProfile';
 import Login from './assets/Pages/Login';
 import Navbar from './components/Navbar';  
 import Artist from './assets/Pages/Artist'; 
-import Artists from './assets/Pages/Artists';
+import Artists from './assets/Pages/Artists'; 
+import Track from './assets/Pages/Track';
 
 function App() { 
   return (
@@ -15,7 +16,8 @@ function App() {
         <Route path="/" element={<Login />} />
         <Route path="/callback" element={<Callback />} />
         <Route path="/profile" element={<UserProfile />} /> 
-        <Route path="/artist/:id" element={<Artist/>}/> 
+        <Route path="/artist/:id" element={<Artist/>}/>  
+        <Route path="track/:id" element={<Track/>}/>
         <Route path="/artists" element={<Artists/>}/>
       </Routes>
     </Router>

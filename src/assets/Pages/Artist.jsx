@@ -64,7 +64,7 @@ const Artist = () => {
   return (
     <div className="bg-[#181818] min-h-screen text-white py-12 px-4 sm:px-6 lg:px-8">
       <div className="lg:mx-32 mx-auto">
-        <div className="flex flex-col md:flex-row items-center md:items-start gap-8 mb-16">
+        <div className="flex flex-col md:flex-row items-center  gap-8 mb-16">
           <img 
             src={artist.images[0]?.url} 
             alt={artist.name} 
