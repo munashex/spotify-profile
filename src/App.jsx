@@ -7,7 +7,8 @@ import Navbar from './components/Navbar';
 import Artist from './Pages/Artist'; 
 import Artists from './Pages/Artists'; 
 import Track from './Pages/Track'; 
-import Tracks from './Pages/Tracks';
+import Tracks from './Pages/Tracks'; 
+import Recent from './Pages/Recent';
 
 function App() { 
   return (
@@ -20,7 +21,8 @@ function App() {
         <Route path="/artist/:id" element={<Artist/>}/>  
         <Route path="track/:id" element={<Track/>}/>
         <Route path="/artists" element={<Artists/>}/> 
-        <Route path="/tracks" element={<Tracks/>}/>
+        <Route path="/tracks" element={<Tracks/>}/> 
+        <Route path="/recent" element={<Recent/>}/>
       </Routes>
     </Router>
   );

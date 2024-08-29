@@ -64,7 +64,7 @@ const Tracks = () => {
 
   return (
     <div className="bg-[#181818] w-full min-h-screen">
-      <div className="mx-4 lg:mx-40 md:mx-9 py-16">
+      <div className="mx-4 lg:mx-56 md:mx-9 py-16">
         <div className="flex flex-col lg:flex-row justify-around gap-y-6 mb-12">
           <h1 className="text-white text-xl md:text-2xl font-bold text-center">Top Tracks</h1>
           <div className="flex flex-row items-center justify-around lg:gap-x-11">

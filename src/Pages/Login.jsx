@@ -6,7 +6,7 @@ const client_id = import.meta.env.VITE_APP_SPOTIFY_CLIENT_ID;
 const redirects = import.meta.env.VITE_APP_SPOTIFY_REDIRECT_URI
 
 
-const LOGIN_URL = `https://accounts.spotify.com/authorize?client_id=${client_id}&response_type=token&redirect_uri=${redirects}&scope=user-read-private user-read-email user-top-read`;
+const LOGIN_URL = `https://accounts.spotify.com/authorize?client_id=${client_id}&response_type=token&redirect_uri=${redirects}&scope=user-read-private user-read-email user-top-read user-read-recently-played`;
 
 
 
