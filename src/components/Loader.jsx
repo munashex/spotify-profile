@@ -3,7 +3,7 @@ import ScaleLoader from 'react-spinners/ScaleLoader'
 const Loader = () => {
 
     return (
-        <div>
+        <div className="">
          <ScaleLoader   
          color="white" 
          width={10}
