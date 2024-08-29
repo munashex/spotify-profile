@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { BrowserRouter as Router, Route, Routes, useLocation } from 'react-router-dom';
 import Callback from './components/Callback';
 import UserProfile from './Pages/UserProfile'; 
@@ -12,6 +12,14 @@ import Recent from './Pages/Recent';
 import NotFound from './Pages/NotFound';
 
 function App() { 
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      localStorage.clear();
+      window.location.reload();
+    }, 54 * 60 * 1000);
+    return () => clearTimeout(timer);
+  }, []);
+
   return (
     <Router>
       <ConditionalNavbar />
@@ -36,4 +44,3 @@ function ConditionalNavbar() {
 }
 
 export default App;
-
