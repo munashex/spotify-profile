@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useCallback } from 'react';
 import axios from 'axios';
 import { useNavigate, Link } from 'react-router-dom';
-import Loader from '../../components/Loader';
+import Loader from '../components/Loader';
 
 const UserProfile = () => {
   const [user, setUser] = useState(null);

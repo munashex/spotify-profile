@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import Loader from "../../components/Loader";
+import Loader from "../components/Loader";
 import axios from 'axios';
 import { useNavigate, Link } from "react-router-dom";
 
@@ -70,24 +70,25 @@ const Artists = () => {
           <div className="flex flex-row items-center justify-around lg:gap-x-11">
             <button
               onClick={() => setTab('tab1')}
-              className={`text-[#aaa5a5] text-lg md:text-xl ${tab === 'tab1' ? 'font-bold border-b border-white' : ''}`}
+              className={`text-[#aaa5a5] lg:text-lg  ${tab === 'tab1' ? 'font-bold border-b border-white' : ''}`}
             >
               All Time
             </button>
             <button
               onClick={() => setTab('tab2')}
-              className={`text-[#aaa5a5] text-lg md:text-xl ${tab === 'tab2' ? 'font-bold border-b border-white' : ''}`}
+              className={`text-[#aaa5a5] lg:text-lg  ${tab === 'tab2' ? 'font-bold border-b border-white' : ''}`}
             >
               Last 6 Months
             </button>
             <button
               onClick={() => setTab('tab3')}
-              className={`text-[#aaa5a5] text-lg md:text-xl ${tab === 'tab3' ? 'font-bold border-b border-white' : ''}`}
+              className={`text-[#aaa5a5] lg:text-lg  ${tab === 'tab3' ? 'font-bold border-b border-white' : ''}`}
             >
               Last 4 Weeks
             </button>
           </div>
         </div>
+
         <div className="mt-8">
           {tab === 'tab1' && renderArtists(longTerm)}
           {tab === 'tab2' && renderArtists(mediumTerm)}

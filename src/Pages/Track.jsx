@@ -1,6 +1,6 @@
 import { useParams, useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
-import Loader from "../../components/Loader";
+import Loader from "../components/Loader";
 import axios from "axios";
 
 const Track = () => {

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import axios from 'axios';
-import Loader from '../../components/Loader';
+import Loader from '../components/Loader';
 
 const Artist = () => {
   const { id } = useParams();
